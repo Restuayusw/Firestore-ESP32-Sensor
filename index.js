@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 app.get('/tugasAkhir', (req, res) => {
     const db = fire.firestore();
     let wholeData = []
-    db.collection('CadenceSensor').orderBy('date', 'desc').get().then(snapshot => {
+    db.collection('cadenceSensor').orderBy('date', 'desc').get().then(snapshot => {
         snapshot.forEach(doc => {
             wholeData.push(doc.data())
         });
@@ -31,7 +31,7 @@ app.get('/tugasAkhir', (req, res) => {
 
 app.post('/tugasAkhir', (req, res) => {
     const db = fire.firestore();
-    db.collection('CadenceSensor').add({
+    db.collection('cadenceSensor').add({
         //change this collections according to your need
         Speed: req.body.kph,
         RPM: req.body.rpm,
