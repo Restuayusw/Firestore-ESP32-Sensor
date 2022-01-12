@@ -16,10 +16,10 @@ app.get('/', (req, res) => {
 });
 
 //match databaseName with your database name
-app.get('/databaseName', (req, res) => {
+app.get('/tugasAkhir', (req, res) => {
     const db = fire.firestore();
     let wholeData = []
-    db.collection('databaseName').orderBy('date', 'desc').get().then(snapshot => {
+    db.collection('CadenceSensor').orderBy('date', 'desc').get().then(snapshot => {
         snapshot.forEach(doc => {
             wholeData.push(doc.data())
         });
@@ -29,13 +29,16 @@ app.get('/databaseName', (req, res) => {
     });
 });
 
-app.post('/databaseName', (req, res) => {
+app.post('/tugasAkhir', (req, res) => {
     const db = fire.firestore();
-    db.collection('databaseName').add({
+    db.collection('CadenceSensor').add({
         //change this collections according to your need
-        temperature: req.body.suhu,
-        height: req.body.tinggi,
-        weight: req.body.berat,
+        Speed: req.body.kph,
+        RPM: req.body.rpm,
+        Cadence: req.body.rpmCrank,
+        Distance: req.body.km,
+        Average: req.body.avg,
+        Calories: req.body.kalori,
         date: new Date()
     });
     res.send({
