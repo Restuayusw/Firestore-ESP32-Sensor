@@ -39,9 +39,9 @@ app.post('/tugasAkhir', (req, res) => {
         Distance: req.body.km,
         Average: req.body.avg,
         Calories: req.body.kalori,
-        Hour: req.body.hours,
-        Minute: req.body.minutes,
-        Second: req.body.seconds,
+        Jam: req.body.hours,
+        Menit: req.body.minutes,
+        Detik: req.body.seconds,
         date: new Date()
     });
     res.send({
