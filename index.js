@@ -39,9 +39,7 @@ app.post('/jumatBerkah', (req, res) => {
         Distance: req.body.km,
         Average: req.body.avg,
         Calories: req.body.kalori,
-        Jam: req.body.hours,
-        Menit: req.body.minutes,
-        Detik: req.body.seconds,
+
         date: new Date()
     });
     res.send({
