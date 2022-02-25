@@ -35,7 +35,7 @@ app.get("/jumatBerkah", (req, res) => {
     });
 });
 
-app.post("/jumatBerkah", (req, res) => {
+app.post("/TABerkah", (req, res) => {
   const db = fire.firestore();
   db.collection("cadenceSensor").add({
     //change this collections according to your need
