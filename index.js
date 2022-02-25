@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 //match databaseName with your database name
-app.get("/jumatBerkah", (req, res) => {
+app.get("/TABerkah", (req, res) => {
   const db = fire.firestore();
   let wholeData = [];
 
